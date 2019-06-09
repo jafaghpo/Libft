@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jafaghpo <jafaghpo@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/06/09 19:06:55 by jafaghpo          #+#    #+#              #
+#    Updated: 2019/06/10 00:13:47 by jafaghpo         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME			=	libft.a
 CC				=	gcc
 CFLAGS			=	-Wall -Wextra -Werror
@@ -17,6 +29,7 @@ SRC_CONV_PATH	=	$(SRC_PATH)/conv
 SRC_FILE_PATH	=	$(SRC_PATH)/file
 SRC_PRINTF_PATH	=	$(SRC_PATH)/ft_printf
 SRC_LST_PATH	=	$(SRC_PATH)/lst
+SRC_LIST_PATH	=	$(SRC_PATH)/list
 SRC_MEM_PATH	=	$(SRC_PATH)/mem
 SRC_PUT_PATH	=	$(SRC_PATH)/put
 SRC_STR_PATH	=	$(SRC_PATH)/str
@@ -26,13 +39,15 @@ include $(SRC_CHAR_PATH)/char.mk
 include $(SRC_CONV_PATH)/conv.mk
 include $(SRC_FILE_PATH)/file.mk
 include $(SRC_LST_PATH)/lst.mk
+include $(SRC_LIST_PATH)/list.mk
 include $(SRC_MEM_PATH)/mem.mk
 include $(SRC_PUT_PATH)/put.mk
 include $(SRC_STR_PATH)/str.mk
 include $(SRC_PRINTF_PATH)/printf.mk
 
 OBJS			=	$(OBJS_CONV) $(OBJS_FILE) $(OBJS_CHAR) $(OBJS_LST) \
-					$(OBJS_MEM) $(OBJS_PUT) $(OBJS_STR) $(OBJS_PRINTF)
+					$(OBJS_MEM) $(OBJS_PUT) $(OBJS_STR) $(OBJS_PRINTF) \
+					$(OBJS_LIST)
 OBJ				=	$(addprefix $(OBJ_PATH)/, $(OBJS))
 
 all: $(NAME)
@@ -42,7 +57,7 @@ $(NAME): $(OBJ)
 	ranlib $@
 
 clean:
-	rm -f $(OBJ)
+	rm -rf $(OBJ)/*
 
 fclean: clean
 	rm -f $(NAME)

@@ -1,0 +1,64 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   list_new.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jafaghpo <jafaghpo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/09 19:27:45 by jafaghpo          #+#    #+#             */
+/*   Updated: 2019/06/10 00:15:00 by jafaghpo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "list.h"
+#include "mem.h"
+
+t_link	*link_new(void *data, t_uint64 size)
+{
+	t_link	*new;
+
+	if (!(new = (t_link *)malloc(sizeof(*new))))
+		return (NULL);
+	if (data == NULL)
+	{
+		new->size = 0;
+		new->data = NULL;
+	}
+	else
+	{
+		new->size = size;
+		if (!(new->data = malloc(size)))
+			return (NULL);
+		ft_memcpy(new->data, (void*)data, size);
+	}
+	new->next = NULL;
+	new->prev = NULL;
+	return (new);
+}
+
+t_list	*list_new(void *data, t_uint64 size)
+{
+	t_list	*new_list;
+	t_link	*new_link;
+
+	if (!(new_list = (t_list *)malloc(sizeof(*new_list))))
+		return (NULL);
+	if (data == NULL)
+	{
+		new_list->first = NULL;
+		new_list->last = NULL;
+		new_list->length = 0;
+	}
+	else
+	{
+		if (!(new_link = link_new(data, size)))
+		{
+			free(new_list);
+			return (NULL);
+		}
+		new_list->first = new_link;
+		new_list->last = new_link;
+		new_list->length = 1;
+	}
+	return (new_list);
+}

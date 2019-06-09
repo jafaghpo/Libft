@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jafaghpo <jafaghpo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/09 18:55:09 by jafaghpo          #+#    #+#             */
+/*   Updated: 2019/06/09 18:56:26 by jafaghpo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
@@ -11,17 +23,17 @@
 
 # define PF_BUFF_SIZE 1000000
 
-# define OUAISLANORME1 extern void (*g_pf_buff)(char *, int)
-# define OUAISLANORME2 extern t_uint64 (*g_pf_utype[7])(va_list)
-# define OUAISLANORME3 extern t_int64 (*g_pf_type[7])(va_list)
+# define NORM1 extern void (*g_pf_buff)(char *, int)
+# define NORM2 extern t_uint64 (*g_pf_utype[7])(va_list)
+# define NORM3 extern t_int64 (*g_pf_type[7])(va_list)
 
 typedef struct s_pftags		t_pftags;
 typedef struct s_pfflags	t_pfflags;
 typedef enum e_pftype		t_pftype;
 
-OUAISLANORME1;
-OUAISLANORME2;
-OUAISLANORME3;
+NORM1;
+NORM2;
+NORM3;
 
 struct		s_pftags
 {
