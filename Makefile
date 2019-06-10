@@ -6,7 +6,7 @@
 #    By: jafaghpo <jafaghpo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/09 19:06:55 by jafaghpo          #+#    #+#              #
-#    Updated: 2019/06/10 00:13:47 by jafaghpo         ###   ########.fr        #
+#    Updated: 2019/06/11 01:37:09 by jafaghpo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,12 +52,15 @@ OBJ				=	$(addprefix $(OBJ_PATH)/, $(OBJS))
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): obj $(OBJ)
 	ar rc $@ $(OBJ)
 	ranlib $@
 
+obj:
+	mkdir -p $(OBJ_PATH)
+
 clean:
-	rm -rf $(OBJ)/*
+	rm -rf $(OBJ_PATH)
 
 fclean: clean
 	rm -f $(NAME)
