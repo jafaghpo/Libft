@@ -6,16 +6,16 @@
 /*   By: jafaghpo <jafaghpo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/09 18:58:14 by jafaghpo          #+#    #+#             */
-/*   Updated: 2019/06/09 18:58:15 by jafaghpo         ###   ########.fr       */
+/*   Updated: 2019/06/10 21:41:57 by jafaghpo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lst.h"
 #include <unistd.h>
 
-void	ft_lstaddlast(t_list **lst, t_list *add)
+void	ft_lstaddlast(t_lst **lst, t_lst *add)
 {
-	t_list	*tmp;
+	t_lst	*tmp;
 
 	if (*lst == NULL)
 	{

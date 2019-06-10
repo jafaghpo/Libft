@@ -6,16 +6,16 @@
 /*   By: jafaghpo <jafaghpo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/09 18:58:25 by jafaghpo          #+#    #+#             */
-/*   Updated: 2019/06/09 18:58:25 by jafaghpo         ###   ########.fr       */
+/*   Updated: 2019/06/10 21:42:34 by jafaghpo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lst.h"
 #include <unistd.h>
 
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *))
+t_lst	*ft_lstmap(t_lst *lst, t_lst *(*f)(t_lst *))
 {
-	t_list	*new_list;
+	t_lst	*new_list;
 
 	if (lst == NULL || f == NULL)
 		return (NULL);

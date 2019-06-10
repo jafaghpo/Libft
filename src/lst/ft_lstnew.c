@@ -6,7 +6,7 @@
 /*   By: jafaghpo <jafaghpo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/09 18:58:27 by jafaghpo          #+#    #+#             */
-/*   Updated: 2019/06/10 00:02:54 by jafaghpo         ###   ########.fr       */
+/*   Updated: 2019/06/10 21:42:46 by jafaghpo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 #include "mem.h"
 #include <stdlib.h>
 
-t_list	*ft_lstnew(void *content, size_t content_size)
+t_lst	*ft_lstnew(void *content, size_t content_size)
 {
-	t_list	*tmp;
+	t_lst	*tmp;
 
-	if (!(tmp = (t_list *)malloc(sizeof(*tmp))))
+	if (!(tmp = (t_lst *)malloc(sizeof(*tmp))))
 		return (NULL);
 	if (content == NULL)
 	{

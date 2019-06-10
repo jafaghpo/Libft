@@ -6,13 +6,13 @@
 /*   By: jafaghpo <jafaghpo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/09 18:58:12 by jafaghpo          #+#    #+#             */
-/*   Updated: 2019/06/09 18:58:12 by jafaghpo         ###   ########.fr       */
+/*   Updated: 2019/06/10 21:41:39 by jafaghpo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lst.h"
 
-void	ft_lstadd(t_list **alst, t_list *new)
+void	ft_lstadd(t_lst **alst, t_lst *new)
 {
 	new->next = *alst;
 	*alst = new;
