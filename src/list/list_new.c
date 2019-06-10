@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_new.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jafaghpo <jafaghpo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: john <john@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/09 19:27:45 by jafaghpo          #+#    #+#             */
-/*   Updated: 2019/06/10 00:15:00 by jafaghpo         ###   ########.fr       */
+/*   Updated: 2019/06/10 14:39:01 by john             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,7 @@ t_link	*link_new(void *data, t_uint64 size)
 	else
 	{
 		new->size = size;
-		if (!(new->data = malloc(size)))
-			return (NULL);
-		ft_memcpy(new->data, (void*)data, size);
+		new->data = data;
 	}
 	new->next = NULL;
 	new->prev = NULL;

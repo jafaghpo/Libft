@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_delete.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jafaghpo <jafaghpo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: john <john@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 00:27:18 by jafaghpo          #+#    #+#             */
-/*   Updated: 2019/06/10 00:41:08 by jafaghpo         ###   ########.fr       */
+/*   Updated: 2019/06/10 17:10:09 by john             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 
 void	link_delete(t_link **link)
 {
-	free((*link)->data);
-	(*link)->data = NULL;
-	(*link)->size = 0;
-	free(*link);
-	*link = NULL;
+	t_link	*tmp;
+
+	tmp = link_remove(*link);
+	free(tmp->data);
+	tmp->data = NULL;
+	tmp->size = 0;
+	free(tmp);
+	tmp = NULL;
 }
 
 void	list_delete(t_list **list)
