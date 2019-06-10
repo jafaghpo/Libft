@@ -6,7 +6,7 @@
 /*   By: jafaghpo <jafaghpo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/09 18:56:57 by jafaghpo          #+#    #+#             */
-/*   Updated: 2019/06/09 18:56:57 by jafaghpo         ###   ########.fr       */
+/*   Updated: 2019/06/10 20:25:32 by jafaghpo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,8 @@ void	ft_strclr(char *s);
 void	ft_striter(char *s, void (*f)(char *));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 int		ft_countstr(char *str);
+size_t	ft_tablen(char **tab);
+size_t	ft_tabsize(char **tab);
+char	*ft_implode(char **tab, char delim);
 
 #endif
