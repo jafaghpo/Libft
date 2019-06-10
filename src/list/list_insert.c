@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_insert.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: john <john@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jafaghpo <jafaghpo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/10 01:04:52 by jafaghpo          #+#    #+#             */
-/*   Updated: 2019/06/10 15:33:33 by john             ###   ########.fr       */
+/*   Created: 2019/06/10 20:40:44 by jafaghpo          #+#    #+#             */
+/*   Updated: 2019/06/11 01:46:38 by jafaghpo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ t_link	*list_insert(t_list *list, t_link *new, t_uint64 index)
 		current = list_get(list, index);
 		new->prev = current->prev;
 		new->next = current;
+		current->prev->next = new;
 		current->prev = new;
 	}
 	list->length++;

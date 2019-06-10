@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   list.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: john <john@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jafaghpo <jafaghpo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/10 00:01:18 by jafaghpo          #+#    #+#             */
-/*   Updated: 2019/06/10 17:19:54 by john             ###   ########.fr       */
+/*   Created: 2019/06/10 20:38:49 by jafaghpo          #+#    #+#             */
+/*   Updated: 2019/06/10 20:39:05 by jafaghpo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LST_H
-# define LST_H
+#ifndef LIST_H
+# define LIST_H
 
 # include <stdlib.h>
 # include <stdbool.h>

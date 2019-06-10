@@ -6,7 +6,7 @@
 /*   By: jafaghpo <jafaghpo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/09 18:56:46 by jafaghpo          #+#    #+#             */
-/*   Updated: 2019/06/09 18:56:46 by jafaghpo         ###   ########.fr       */
+/*   Updated: 2019/06/10 21:39:47 by jafaghpo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include "conv.h"
 # include "file.h"
 # include "lst.h"
+# include "list.h"
 # include "mem.h"
 # include "put.h"
 # include "str.h"

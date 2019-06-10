@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   list_get.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: john <john@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jafaghpo <jafaghpo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/10 00:54:30 by jafaghpo          #+#    #+#             */
-/*   Updated: 2019/06/10 15:45:12 by john             ###   ########.fr       */
+/*   Created: 2019/06/10 20:40:17 by jafaghpo          #+#    #+#             */
+/*   Updated: 2019/06/11 00:37:25 by jafaghpo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "list.h"
+#include "ft_printf.h"
 
 t_link	*list_get_from_first(t_link *first, t_uint64 offset)
 {

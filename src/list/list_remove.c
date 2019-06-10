@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_remove.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: john <john@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jafaghpo <jafaghpo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/10 16:42:07 by john              #+#    #+#             */
-/*   Updated: 2019/06/10 17:15:04 by john             ###   ########.fr       */
+/*   Created: 2019/06/10 20:41:32 by jafaghpo          #+#    #+#             */
+/*   Updated: 2019/06/11 00:41:10 by jafaghpo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,12 @@ t_link	*list_remove(t_list *list, t_uint64 index)
 {
 	t_link	*link;
 
-	link = list_get(list, index);
+	if (index == 0)
+		link = list_pop_first(list);
+	else if (index == list->length - 1)
+		link = list_pop_last(list);
+	else
+		link = list_get(list, index);
 	if (link == NULL)
 		return (NULL);
 	link = link_remove(link);
