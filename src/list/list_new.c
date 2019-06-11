@@ -6,7 +6,7 @@
 /*   By: jafaghpo <jafaghpo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 20:41:06 by jafaghpo          #+#    #+#             */
-/*   Updated: 2019/06/11 01:28:34 by jafaghpo         ###   ########.fr       */
+/*   Updated: 2019/06/11 19:51:36 by jafaghpo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 t_link	*link_new(void *data, t_uint64 size)
 {
 	t_link	*new;
+	void	*new_data;
 
 	if (!(new = (t_link *)malloc(sizeof(*new))))
 		return (NULL);
@@ -26,8 +27,10 @@ t_link	*link_new(void *data, t_uint64 size)
 	}
 	else
 	{
+		if (!(new_data = ft_memdup(data, size)))
+			return (NULL);
 		new->size = size;
-		new->data = data;
+		new->data = new_data;
 	}
 	new->next = NULL;
 	new->prev = NULL;

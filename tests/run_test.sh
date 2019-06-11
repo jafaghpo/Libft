@@ -1,1 +1,1 @@
-make && gcc -o libft_test tests/main.c libft.a -I include && ./libft_test
+make -j && gcc -o libft_test tests/main.c libft.a -I include -g && ./libft_test

@@ -6,7 +6,7 @@
 /*   By: jafaghpo <jafaghpo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/09 18:59:03 by jafaghpo          #+#    #+#             */
-/*   Updated: 2019/06/09 18:59:03 by jafaghpo         ###   ########.fr       */
+/*   Updated: 2019/06/11 23:26:22 by jafaghpo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_realloc(void *data, size_t size)
 	void	*tmp;
 
 	if (!(tmp = malloc(size)))
-		ft_error("error malloc in ft_realloc");
+		return (NULL);
 	if (!data)
 		return (tmp);
 	ft_memmove(tmp, data, size);

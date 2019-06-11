@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   vec_clear.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jafaghpo <jafaghpo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/09 18:56:46 by jafaghpo          #+#    #+#             */
-/*   Updated: 2019/06/11 22:05:03 by jafaghpo         ###   ########.fr       */
+/*   Created: 2019/06/11 23:48:50 by jafaghpo          #+#    #+#             */
+/*   Updated: 2019/06/12 00:05:17 by jafaghpo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "vec.h"
+#include "mem.h"
 
-# include "type.h"
-# include "char.h"
-# include "conv.h"
-# include "file.h"
-# include "lst.h"
-# include "list.h"
-# include "mem.h"
-# include "put.h"
-# include "str.h"
-# include "vec.h"
-# include "ft_printf.h"
-
-#endif
+void	vec_clear(t_vec *vec)
+{
+	ft_bzero(vec->data, vec->size);
+}

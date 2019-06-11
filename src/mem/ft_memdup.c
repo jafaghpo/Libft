@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jafaghpo <jafaghpo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/09 18:56:46 by jafaghpo          #+#    #+#             */
-/*   Updated: 2019/06/11 22:05:03 by jafaghpo         ###   ########.fr       */
+/*   Created: 2019/06/11 19:39:48 by jafaghpo          #+#    #+#             */
+/*   Updated: 2019/06/12 00:47:00 by jafaghpo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "mem.h"
+#include <stdlib.h>
 
-# include "type.h"
-# include "char.h"
-# include "conv.h"
-# include "file.h"
-# include "lst.h"
-# include "list.h"
-# include "mem.h"
-# include "put.h"
-# include "str.h"
-# include "vec.h"
-# include "ft_printf.h"
+void	*ft_memdup(void *src, size_t n)
+{
+	void	*dst;
 
-#endif
+	if (!(dst = malloc(n)))
+		return (NULL);
+	ft_memcpy(dst, src, (int)n);
+	return (dst);
+}

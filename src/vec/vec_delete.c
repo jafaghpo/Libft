@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   vec_delete.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jafaghpo <jafaghpo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/09 18:56:46 by jafaghpo          #+#    #+#             */
-/*   Updated: 2019/06/11 22:05:03 by jafaghpo         ###   ########.fr       */
+/*   Created: 2019/06/12 00:06:09 by jafaghpo          #+#    #+#             */
+/*   Updated: 2019/06/12 00:46:52 by jafaghpo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "vec.h"
 
-# include "type.h"
-# include "char.h"
-# include "conv.h"
-# include "file.h"
-# include "lst.h"
-# include "list.h"
-# include "mem.h"
-# include "put.h"
-# include "str.h"
-# include "vec.h"
-# include "ft_printf.h"
-
-#endif
+void	vec_delete(t_vec **vec)
+{
+	free((*vec)->data);
+	(*vec)->data = NULL;
+	(*vec)->size = 0;
+	(*vec)->capacity = 0;
+	free(*vec);
+	*vec = NULL;
+}
