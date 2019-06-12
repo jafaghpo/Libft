@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   tab_total_size.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jafaghpo <jafaghpo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/09 18:58:25 by jafaghpo          #+#    #+#             */
-/*   Updated: 2019/06/10 21:42:34 by jafaghpo         ###   ########.fr       */
+/*   Created: 2019/06/10 19:33:56 by jafaghpo          #+#    #+#             */
+/*   Updated: 2019/06/12 19:49:54 by jafaghpo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lst.h"
-#include <unistd.h>
+#include "str.h"
 
-t_lst	*ft_lstmap(t_lst *lst, t_lst *(*f)(t_lst *))
+size_t		tab_total_size(char **tab)
 {
-	t_lst	*new_list;
+	size_t	i;
+	size_t	count;
 
-	if (lst == NULL || f == NULL)
-		return (NULL);
-	new_list = NULL;
-	while (lst)
-	{
-		ft_lstaddlast(&new_list, f(lst));
-		lst = lst->next;
-	}
-	return (new_list);
+	count = 0;
+	i = 0;
+	while (tab[i])
+		count += ft_strlen(tab[i++]);
+	return (count);
 }

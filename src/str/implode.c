@@ -1,21 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   implode.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jafaghpo <jafaghpo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/09 18:58:19 by jafaghpo          #+#    #+#             */
-/*   Updated: 2019/06/10 21:42:05 by jafaghpo         ###   ########.fr       */
+/*   Created: 2019/06/10 19:13:56 by jafaghpo          #+#    #+#             */
+/*   Updated: 2019/06/12 19:53:15 by jafaghpo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lst.h"
 #include <stdlib.h>
+#include "str.h"
 
-void	ft_lstdelone(t_lst **alst, void (*del)(void *, size_t))
+char		*implode(char **tab, char delim)
 {
-	(*del)((*alst)->content, (*alst)->content_size);
-	free(*alst);
-	*alst = NULL;
+	char	*str;
+	size_t	len;
+	size_t	i;
+	size_t	j;
+	size_t	index;
+
+	len = tab_total_size(tab);
+	if (!(str = (char*)malloc(len + tab_size(tab))))
+		return (NULL);
+	i = 0;
+	index = 0;
+	while (tab[i])
+	{
+		j = 0;
+		while (tab[i][j])
+			str[index++] = tab[i][j++];
+		if (delim != 0)
+			str[index++] = delim;
+		i++;
+	}
+	str[index - 1] = 0;
+	return (str);
 }
